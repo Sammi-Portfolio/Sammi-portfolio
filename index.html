@@ -8,12 +8,12 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Sammi Teki - Portfolio">
   <meta property="og:description" content="Founder and commercial operator portfolio spanning fintech, AI automation, GTM, partnerships, and startup building.">
-  <meta property="og:image" content="/assets/images/backgrounds/home-background-clean.png">
+  <meta property="og:image" content="/assets/home-background-clean.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sammi Teki - Portfolio">
   <meta name="twitter:description" content="Founder and commercial operator portfolio spanning fintech, AI automation, GTM, partnerships, and startup building.">
-  <meta name="twitter:image" content="/assets/images/backgrounds/home-background-clean.png">
-  <link rel="icon" href="/assets/images/icons/icon-compass.png">
+  <meta name="twitter:image" content="/assets/home-background-clean.png">
+  <link rel="icon" href="/assets/icon-compass.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Libre+Baskerville:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -187,7 +187,7 @@
     }
     img.photo-icon { object-fit:cover; display:block; }
     .photo-icon { background:linear-gradient(135deg,#99c778,#f6eab5); }
-    .photo-icon.cloud { background:radial-gradient(circle at 32% 32%,#fff 0 12%,transparent 13%), radial-gradient(circle at 54% 44%,#fff 0 17%,transparent 18%), linear-gradient(135deg,#94cdf8,#f9c1d8); }
+    .photo-icon.cloud { background:radial-gradient(circle at 32% 32%,#fff 0 12%,transparent 13%), radial-gradient(circle at 54% 44%,#fff 0 17%,transparent 18%), linear-gradient(135deg,#94cdf8,#f9d9b8); }
     .photo-icon.green { background:linear-gradient(135deg,#274c2f,#8cb45d 48%,#efe2b2); }
     .photo-icon.tan { background:linear-gradient(135deg,#d5b890,#f4efe5 45%,#9c6d51); }
     .photo-icon.orange { background:radial-gradient(circle at 40% 48%,#f3d8c7 0 12%,transparent 13%), linear-gradient(135deg,#f1ad70,#fee7c3); }
@@ -998,294 +998,1447 @@
       font-size:clamp(24px,3vw,36px);
     }
     .culture-gallery {
-      grid-template-columns:1fr;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
     }
     .culture-item {
-      min-height:180px;
+      min-height:260px;
+      background:rgba(255,253,250,.72);
+      border-color:rgba(20,20,24,.12);
     }
-    .frame ul li { text-align:left; }
+    #founder .pagehead {
+      justify-content:space-between;
+      text-align:left;
+      min-height:160px;
+      margin-bottom:14px;
+    }
+    #founder .pagehead h1 {
+      text-transform:uppercase;
+      font-size:clamp(48px,7.5vw,104px);
+      line-height:.9;
+    }
+    #founder .pagehead h1:after { display:none; }
+    .founder-visuals {
+      max-width:1120px;
+      margin:0 auto 54px;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(280px, .9fr);
+      align-items:center;
+      gap:42px;
+    }
+    .founder-intro {
+      max-width:560px;
+      font-size:20px;
+      line-height:1.25;
+      color:#111;
+    }
+    .founder-intro strong,
+    .more-detail-title span {
+      background:var(--yellow);
+      padding:0 .12em;
+    }
+    .founder-collage {
+      display:grid;
+      gap:20px;
+      justify-items:center;
+    }
+    .founder-collage img {
+      max-width:100%;
+      height:auto;
+      display:block;
+    }
+    .founder-collage img:first-child {
+      width:min(420px,100%);
+      transform:rotate(-1.2deg);
+    }
+    .founder-collage img:last-child {
+      width:min(460px,100%);
+      transform:rotate(1deg);
+      margin-top:-26px;
+    }
+    .more-detail {
+      max-width:1120px;
+      margin:0 auto;
+    }
+    .more-detail-title {
+      margin:0 0 24px;
+      font-size:clamp(42px,7vw,88px);
+      line-height:.9;
+      font-weight:500;
+    }
+    .detail-grid {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+    .detail-card {
+      padding:22px;
+      border:1.5px solid rgba(0,0,0,.16);
+      border-radius:8px;
+      background:rgba(255,253,250,.76);
+      box-shadow:0 10px 24px rgba(85,65,45,.09);
+    }
+    .detail-card.wide { grid-column:1 / -1; }
+    .detail-card .eyebrow {
+      color:#111;
+      margin-bottom:8px;
+    }
+    .detail-card h2 {
+      margin:0 0 8px;
+      font-size:clamp(26px,3vw,38px);
+      line-height:1;
+      font-weight:600;
+    }
+    .detail-card .role {
+      font-size:clamp(21px,2.4vw,34px);
+      margin:0 0 14px;
+    }
+    .detail-card p {
+      margin:0;
+      color:#111;
+      font-size:17px;
+      line-height:1.45;
+    }
+
+    /* Final shared Y2K app skin for every interior screen. */
+    .sky {
+      --inner-bg:
+        radial-gradient(340px 180px at 14% 18%, rgba(234,220,255,.82), transparent 72%),
+        radial-gradient(300px 160px at 84% 12%, rgba(215,240,238,.72), transparent 72%),
+        radial-gradient(440px 220px at 70% 82%, rgba(47,140,255,.14), transparent 76%),
+        linear-gradient(180deg,var(--cream) 0%, #fffaf2 48%, #f2edff 100%);
+      background:
+        var(--inner-bg);
+      padding:28px clamp(18px,5vw,72px) 86px;
+    }
+    .backbar {
+      justify-content:flex-start;
+      margin-bottom:22px;
+    }
+    .back {
+      border:1.5px solid rgba(90,100,116,.75);
+      background:rgba(255,253,250,.74);
+      color:var(--ink);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.9), 0 4px 14px rgba(96,72,50,.12);
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+    }
+    .pagehead {
+      text-align:left;
+      justify-content:space-between;
+      min-height:auto;
+      margin-bottom:30px;
+    }
+    .pagehead h1 {
+      text-transform:uppercase;
+      font-size:clamp(46px,7.8vw,104px);
+      line-height:.88;
+    }
+    .pagehead h1:after { display:none; }
+    .frame {
+      max-width:900px;
+      min-height:auto;
+      overflow:hidden;
+      border:1px solid var(--panel-line);
+      border-radius:10px;
+      background:rgba(255,253,250,.9);
+      box-shadow:0 18px 38px rgba(85,65,45,.14);
+    }
+    .frame .titlebar {
+      display:flex;
+      min-height:40px;
+      padding:10px 14px;
+      background:linear-gradient(#f4eee9,#e7ddd5);
+      border-bottom:1px solid var(--panel-line);
+    }
+    .frame .titlebar .dots { display:flex; }
+    .content {
+      min-height:auto;
+      padding:34px clamp(22px,4vw,44px) 42px;
+      text-align:left;
+    }
+    .frame h2 {
+      max-width:none;
+      margin:0 0 12px;
+      font-size:clamp(34px,6vw,64px);
+      line-height:.94;
+      font-weight:700;
+    }
+    .lede {
+      display:table;
+      margin:0 0 22px;
+      font-size:clamp(22px,3.2vw,36px);
+    }
+    .frame p,
+    .frame li {
+      margin-left:0;
+      margin-right:0;
+      max-width:64ch;
+      color:#20303f;
+    }
+    .frame p:first-of-type { margin-top:0; }
+    .frame ul {
+      display:grid;
+      max-width:760px;
+      margin:24px 0 16px;
+    }
+    .chiprow {
+      justify-content:flex-start;
+      margin-top:22px;
+    }
+    .top-achievements {
+      margin:28px 0 0;
+    }
+    .achievements li {
+      background:rgba(255,255,255,.78);
+      border-color:var(--panel-line);
+    }
+    #founder .sky { background:var(--inner-bg); }
+
+    /* Final alignment pass from the annotated desktop mockup. */
+    .founder-intro strong,
+    .more-detail-title span,
+    .role,
+    .achievements strong,
+    .top-achievements,
+    .culture-caption strong {
+      background:var(--selection);
+      color:#fff;
+      box-decoration-break:clone;
+      -webkit-box-decoration-break:clone;
+    }
+    #founder .pagehead,
+    #founder .founder-visuals,
+    #founder .more-detail {
+      max-width:960px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    #founder .pagehead {
+      position:relative;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:36px;
+      min-height:0;
+      margin-top:8px;
+      margin-bottom:8px;
+      padding-right:128px;
+      text-align:left;
+    }
+    #founder .pagehead h1 {
+      max-width:620px;
+      font-size:clamp(48px,6.4vw,92px);
+      line-height:.86;
+      letter-spacing:-0.095em;
+      text-transform:uppercase;
+    }
+    #founder .polaroid {
+      position:absolute;
+      right:0;
+      top:4px;
+      width:104px;
+    }
+    #founder .founder-visuals {
+      display:grid;
+      grid-template-columns:minmax(290px,.72fr) minmax(360px,1fr);
+      align-items:start;
+      gap:44px;
+      margin-bottom:38px;
+    }
+    #founder .founder-intro {
+      max-width:430px;
+      margin:22px 0 0;
+      padding:20px 24px;
+      border:1px solid rgba(217,209,199,.65);
+      border-radius:0;
+      background:rgba(255,253,250,.58);
+      box-shadow:0 18px 40px rgba(92,70,48,.07);
+      font-family:"Quicksand", system-ui, sans-serif;
+      font-size:clamp(15px,1.05vw,17px);
+      line-height:1.35;
+      letter-spacing:0;
+      color:#1f2430;
+      text-align:left;
+    }
+    #founder .founder-collage {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      justify-items:center;
+      align-items:start;
+      gap:18px;
+      padding-top:0;
+    }
+    #founder .founder-collage img:first-child {
+      width:min(300px,100%);
+      transform:rotate(-1deg);
+      z-index:2;
+    }
+    #founder .founder-collage img:last-child {
+      width:min(315px,100%);
+      margin-top:34px;
+      transform:rotate(.8deg);
+      z-index:1;
+    }
+    #founder .more-detail {
+      max-width:900px;
+    }
+    #founder .more-detail-title {
+      font-size:clamp(42px,6.4vw,86px);
+    }
+    #founder .detail-grid {
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+    #founder .detail-card {
+      padding:26px 30px;
+      background:rgba(255,253,250,.86);
+    }
+
+    /* Light.inc-inspired readability pass: calmer type and smaller panels. */
+    .sky {
+      background:
+        radial-gradient(420px 220px at 86% 28%, rgba(215,240,238,.42), transparent 70%),
+        radial-gradient(360px 200px at 10% 70%, rgba(234,220,255,.36), transparent 72%),
+        linear-gradient(180deg,#fffaf2 0%, #fffdf8 54%, #f8f4ee 100%);
+      font-family:-apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      color:#202024;
+    }
+    .back,
+    .frame p,
+    .frame li,
+    .founder-intro,
+    .detail-card p,
+    .detail-card .eyebrow,
+    .chip,
+    .lede {
+      font-family:-apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      letter-spacing:0;
+    }
+    .pagehead h1,
+    #founder .pagehead h1,
+    .frame h2,
+    .detail-card h2,
+    .more-detail-title {
+      font-family:Georgia, "Times New Roman", serif;
+      letter-spacing:-0.035em;
+      color:#202024;
+    }
+    #founder .pagehead,
+    #founder .founder-visuals,
+    #founder .more-detail {
+      max-width:980px;
+    }
+    #founder .pagehead {
+      margin-top:4px;
+      margin-bottom:16px;
+      padding-right:116px;
+    }
+    #founder .pagehead h1 {
+      max-width:580px;
+      font-size:clamp(42px,5.2vw,72px);
+      line-height:.92;
+      font-weight:700;
+    }
+    #founder .polaroid {
+      width:92px;
+    }
+    #founder .founder-visuals {
+      grid-template-columns:minmax(290px,.75fr) minmax(360px,1fr);
+      gap:42px;
+      margin-bottom:34px;
+    }
+    #founder .founder-intro {
+      max-width:420px;
+      margin:18px 0 0;
+      padding:18px 22px;
+      font-size:15px;
+      line-height:1.48;
+      color:#3b3b40;
+      background:rgba(255,253,250,.72);
+    }
+    #founder .founder-collage img:first-child {
+      width:min(270px,100%);
+    }
+    #founder .founder-collage img:last-child {
+      width:min(285px,100%);
+      margin-top:28px;
+    }
+    #founder .more-detail {
+      max-width:980px;
+      margin-top:6px;
+    }
+    #founder .more-detail-title {
+      margin:0 0 18px;
+      font-size:clamp(30px,3.8vw,46px);
+      line-height:1;
+      font-weight:400;
+    }
+    #founder .detail-grid {
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+    }
+    #founder .detail-card {
+      padding:22px 24px;
+      border:1px solid #e6ddd2;
+      border-radius:8px;
+      background:rgba(255,253,250,.88);
+      box-shadow:none;
+    }
+    #founder .detail-card .eyebrow {
+      margin-bottom:8px;
+      font-size:12px;
+      font-weight:700;
+      color:#3b3b40;
+    }
+    #founder .detail-card h2 {
+      margin:0 0 8px;
+      font-size:clamp(24px,2.2vw,31px);
+      line-height:1.05;
+      font-weight:400;
+    }
+    #founder .detail-card .role {
+      display:inline;
+      margin:0;
+      padding:1px 5px 2px;
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:16px;
+      line-height:1.15;
+      font-style:italic;
+      font-weight:400;
+      color:#16385f;
+      background:var(--selection-soft);
+    }
+    #founder .detail-card p {
+      margin-top:12px;
+      font-size:15px;
+      line-height:1.5;
+      color:#34343a;
+    }
+    #founder .detail-card.wide {
+      grid-column:1 / -1;
+    }
+    body:has(.screen:not(#home).active) {
+      background:#fff;
+    }
+    .screen:not(#home) .sky,
+    #founder .sky {
+      background:#fff !important;
+    }
+    #founder .pagehead h1 {
+      font-family:-apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      font-weight:900;
+      letter-spacing:-0.055em;
+      text-transform:uppercase;
+    }
+    #founder .experience-media {
+      background:transparent;
+    }
+    #founder .experience-media img {
+      width:auto;
+      object-fit:contain;
+    }
+    #founder .experience-media img[src$="panel-badr-clean.png"] {
+      max-width:min(420px,100%);
+    }
+    #culture .frame {
+      max-width:1120px;
+    }
+    #culture .culture-gallery {
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;
+    }
+    #culture .culture-item {
+      min-height:230px;
+      border-color:#e6ddd2;
+      background:rgba(255,253,250,.88);
+      box-shadow:none;
+    }
+    #culture .culture-caption {
+      font-family:-apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      font-size:13px;
+      line-height:1.35;
+    }
+    #culture .culture-caption strong {
+      font-size:12px;
+    }
+    #founder .founder-visuals,
+    #founder .more-detail {
+      display:none !important;
+    }
+    #founder .sky {
+      padding:24px 24px 72px;
+    }
+    #founder .backbar {
+      max-width:980px;
+      margin:0 auto 24px;
+    }
+    #founder .pagehead {
+      max-width:980px;
+      margin:0 auto 22px;
+      padding-right:0;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) 116px;
+      align-items:center;
+      justify-items:start;
+      gap:32px;
+      text-align:left;
+    }
+    #founder .pagehead h1 {
+      max-width:560px;
+      margin:0;
+      font-size:clamp(44px,5.4vw,76px);
+      line-height:.9;
+    }
+    #founder .polaroid {
+      position:relative;
+      right:auto;
+      top:auto;
+      width:92px;
+      margin:0;
+      justify-self:end;
+    }
+    .founder-scroll {
+      max-width:980px;
+      margin:0 auto;
+      display:grid;
+      gap:0;
+      scroll-snap-type:y proximity;
+    }
+    .founder-kicker {
+      max-width:620px;
+      margin:0 0 28px;
+      font:400 16px/1.5 -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      color:#3b3b40;
+      text-align:left;
+    }
+    .founder-kicker strong {
+      padding:1px 5px 2px;
+      background:var(--selection-soft);
+      color:#16385f;
+      font-weight:700;
+    }
+    .founder-overview {
+      max-width:980px;
+      margin:0 auto 42px;
+      padding-bottom:36px;
+      border-bottom:2px solid #202024;
+    }
+    .founder-overview-lede {
+      max-width:720px;
+      margin:0 0 34px;
+      font:400 17px/1.55 -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      color:#3b3b40;
+    }
+    .founder-overview-lede strong,
+    .founder-metric strong,
+    .founder-future strong {
+      padding:1px 5px 2px;
+      background:var(--selection);
+      color:#fff;
+      font-weight:800;
+      box-decoration-break:clone;
+      -webkit-box-decoration-break:clone;
+    }
+    .founder-overview-grid {
+      display:grid;
+      gap:0;
+      border-top:2px solid #202024;
+      border-bottom:2px solid #202024;
+    }
+    .founder-metric {
+      display:grid;
+      grid-template-columns:92px 1fr;
+      gap:24px;
+      padding:16px 0;
+      border-bottom:1px solid #d8d8dc;
+      font:400 15px/1.45 -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      color:#3f3f45;
+    }
+    .founder-metric:last-child {
+      border-bottom:0;
+    }
+    .founder-metric b {
+      color:#202024;
+      font-size:13px;
+      line-height:1.2;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+    }
+    .founder-metric span {
+      display:block;
+    }
+    .founder-future {
+      max-width:760px;
+      margin:34px 0 0;
+      padding:0;
+      font:400 16px/1.55 -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      color:#3d3e43;
+    }
+    .founder-plan-grid {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+      margin-top:26px;
+    }
+    .founder-plan {
+      padding-top:18px;
+      border-top:1px solid #d8d8dc;
+      font:400 15px/1.45 -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      color:#4a4a50;
+    }
+    .founder-plan b {
+      display:block;
+      margin-bottom:8px;
+      color:#202024;
+      font-size:13px;
+      line-height:1.2;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+    .founder-future h2,
+    .timeline-heading {
+      margin:0 0 14px;
+      font:800 14px/1.2 -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      color:#202024;
+    }
+    .timeline-heading {
+      max-width:980px;
+      margin:0 auto 4px;
+    }
+    .experience-panel {
+      min-height:auto;
+      display:grid;
+      grid-template-columns:minmax(260px,.88fr) minmax(300px,1fr);
+      align-items:center;
+      gap:clamp(34px,5vw,64px);
+      padding:40px 0;
+      border-top:2px solid #1f1f21;
+      scroll-snap-align:start;
+    }
+    @supports (animation-timeline:view()) {
+      .experience-panel {
+        opacity:1;
+        transform:none;
+        animation:experience-pop both ease-out;
+        animation-timeline:view();
+        animation-range:entry 8% cover 42%;
+      }
+    }
+    @keyframes experience-pop {
+      to {
+        opacity:1;
+        transform:translateY(0) scale(1);
+      }
+    }
+    .experience-panel:nth-of-type(even) .experience-media {
+      order:2;
+    }
+    .experience-media {
+      position:relative;
+      min-height:250px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#ededec;
+    }
+    .experience-media img {
+      max-width:min(280px,92%);
+      max-height:280px;
+      object-fit:contain;
+      filter:drop-shadow(0 18px 24px rgba(30,30,30,.12));
+    }
+    .experience-copy {
+      max-width:420px;
+    }
+    .experience-copy .eyebrow {
+      display:inline-flex;
+      align-items:center;
+      margin-bottom:24px;
+      padding:7px 18px;
+      border:1.5px solid #2c2c2f;
+      border-radius:999px;
+      font:500 13px/1 -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      color:#2c2c2f;
+    }
+    .experience-copy h2 {
+      margin:0 0 18px;
+      font:400 clamp(30px,3vw,42px)/1.05 -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      letter-spacing:-0.045em;
+      color:#202024;
+    }
+    .experience-copy .role {
+      display:block;
+      margin:0;
+      padding:0;
+      background:transparent;
+      color:#55565b;
+      font:400 19px/1.35 -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+    }
+    .experience-copy p {
+      max-width:42ch;
+      margin:22px 0 0;
+      font:400 16px/1.55 -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      color:#4a4a50;
+    }
+    .experience-progress {
+      margin-top:34px;
+      font:600 17px/1 -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      color:#202024;
+    }
+    .experience-progress:after {
+      content:"  →";
+      font-size:1.1em;
+    }
+
+    /* Final shared page system: match Founder History's clean desktop rhythm. */
+    #about .sky,
+    #studies .sky,
+    #culture .sky,
+    #contact .sky,
+    #mystory .sky {
+      background:#fff !important;
+      padding:28px 24px 88px;
+      font-family:-apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      color:#202024;
+    }
+    #about .backbar,
+    #studies .backbar,
+    #culture .backbar,
+    #contact .backbar,
+    #mystory .backbar {
+      max-width:980px;
+      margin:0 auto 34px;
+      justify-content:flex-start;
+    }
+    #about .frame,
+    #studies .frame,
+    #culture .frame,
+    #contact .frame,
+    #mystory .frame {
+      max-width:980px;
+      margin:0 auto;
+      border:0;
+      border-radius:0;
+      background:transparent;
+      box-shadow:none;
+      overflow:visible;
+    }
+    #about .frame .titlebar,
+    #studies .frame .titlebar,
+    #culture .frame .titlebar,
+    #contact .frame .titlebar,
+    #mystory .frame .titlebar {
+      display:none;
+    }
+    #about .content,
+    #studies .content,
+    #culture .content,
+    #contact .content,
+    #mystory .content {
+      max-width:980px;
+      min-height:0;
+      padding:0 0 52px;
+      text-align:left;
+    }
+    #about .frame h2,
+    #studies .frame h2,
+    #culture .frame h2,
+    #contact .frame h2,
+    #mystory .frame h2 {
+      max-width:720px;
+      margin:0 0 18px;
+      font-family:-apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      font-size:clamp(44px,5.4vw,76px);
+      line-height:.9;
+      font-weight:900;
+      letter-spacing:-0.055em;
+      text-transform:uppercase;
+      color:#202024;
+    }
+    #about .lede,
+    #studies .lede,
+    #culture .lede,
+    #contact .lede,
+    #mystory .lede {
+      display:inline;
+      padding:1px 6px 3px;
+      background:var(--selection);
+      color:#fff;
+      font-family:-apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      font-size:clamp(17px,1.7vw,22px);
+      font-style:normal;
+      font-weight:700;
+      line-height:1.24;
+      box-decoration-break:clone;
+      -webkit-box-decoration-break:clone;
+    }
+    #about .frame p,
+    #studies .frame p,
+    #culture .frame p,
+    #contact .frame p,
+    #mystory .frame p,
+    #about .frame li,
+    #studies .frame li,
+    #culture .frame li,
+    #contact .frame li,
+    #mystory .frame li {
+      max-width:66ch;
+      margin-left:0;
+      margin-right:0;
+      font-family:-apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      font-size:16px;
+      line-height:1.56;
+      letter-spacing:0;
+      color:#3d3e43;
+    }
+    #about .frame p:first-of-type,
+    #studies .frame p:first-of-type,
+    #culture .frame p:first-of-type,
+    #contact .frame p:first-of-type,
+    #mystory .frame p:first-of-type {
+      margin-top:28px;
+    }
+    #about .overview-grid {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:0;
+      margin:40px 0 14px;
+      border-top:2px solid #202024;
+      border-bottom:2px solid #202024;
+    }
+    #about .overview-card {
+      padding:24px 22px;
+      border:0;
+      border-right:1px solid #d8d8dc;
+      border-radius:0;
+      background:transparent;
+      box-shadow:none;
+    }
+    #about .overview-card:last-child {
+      border-right:0;
+    }
+    #about .overview-card b {
+      display:block;
+      width:auto;
+      margin:0 0 12px;
+      padding:0;
+      background:transparent;
+      color:#202024;
+      font:800 14px/1.2 -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.02em;
+    }
+    #about .overview-card span {
+      color:#4a4a50;
+      font-size:15px;
+      line-height:1.45;
+    }
+    #about .top-achievements,
+    #mystory .top-achievements {
+      margin:42px 0 18px;
+      padding:0;
+      background:transparent;
+      color:#202024;
+      font-family:-apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      font-size:15px;
+      font-style:normal;
+      font-weight:800;
+      letter-spacing:.02em;
+      line-height:1.2;
+      text-transform:uppercase;
+    }
+    #about .achievements,
+    #mystory .achievements {
+      max-width:760px;
+      margin:0;
+      gap:0;
+      border-top:2px solid #202024;
+      list-style:none;
+    }
+    #about .achievements li,
+    #mystory .achievements li {
+      padding:16px 0;
+      border:0;
+      border-bottom:1px solid #d8d8dc;
+      border-radius:0;
+      background:transparent;
+      box-shadow:none;
+    }
+    #about .achievements strong,
+    #mystory .achievements strong {
+      padding:1px 5px 2px;
+      background:var(--selection);
+      color:#fff;
+      font-weight:800;
+    }
+    #studies .chiprow,
+    #contact .chiprow,
+    #about .chiprow {
+      justify-content:flex-start;
+      gap:10px;
+      margin-top:30px;
+    }
+    #studies .chip,
+    #contact .chip,
+    #about .chip {
+      border:1.5px solid #202024;
+      background:#fff;
+      color:#202024;
+      box-shadow:none;
+      text-decoration:none;
+    }
+    #studies .chip:hover,
+    #contact .chip:hover,
+    #about .chip:hover {
+      background:var(--selection-soft);
+    }
+    #culture .frame {
+      max-width:1100px;
+    }
+    #culture .content {
+      max-width:1100px;
+    }
+    #culture .culture-gallery {
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:18px;
+      margin-top:42px;
+    }
+    #culture .culture-item {
+      min-height:auto;
+      border:0;
+      border-radius:7px;
+      background:transparent;
+      box-shadow:none;
+      overflow:hidden;
+    }
+    #culture .culture-item img {
+      aspect-ratio:4 / 5;
+      border-radius:7px;
+      border:1px solid #d8d8dc;
+      box-shadow:none;
+    }
+    #culture .culture-caption {
+      left:10px;
+      right:10px;
+      bottom:10px;
+      border:1px solid rgba(255,255,255,.7);
+      background:rgba(255,255,255,.9);
+      font-family:-apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+      font-size:13px;
+      line-height:1.35;
+      color:#202024;
+    }
+    #culture .culture-caption strong {
+      display:inline;
+      padding:1px 5px 2px;
+      background:var(--selection);
+      color:#fff;
+      font-size:13px;
+      font-weight:800;
+      box-decoration-break:clone;
+      -webkit-box-decoration-break:clone;
+    }
+    #contact .content,
+    #studies .content {
+      max-width:760px;
+    }
+    #contact .frame h2,
+    #studies .frame h2 {
+      max-width:680px;
+    }
+
+    /* Founder Memo heading system: Open Sauce, uppercase, tight tracking. */
+    #founder .pagehead h1,
+    #founder .more-detail-title,
+    #founder .detail-card h2,
+    #about .frame h2,
+    #studies .frame h2,
+    #culture .frame h2,
+    #contact .frame h2,
+    #mystory .frame h2,
+    .experience-copy h2,
+    .founder-future h2,
+    .timeline-heading,
+    .top-achievements {
+      font-family:var(--headline-font);
+      font-weight:900;
+      letter-spacing:var(--headline-tracking);
+      text-transform:uppercase;
+    }
+    #founder .pagehead h1,
+    #about .frame h2,
+    #studies .frame h2,
+    #culture .frame h2,
+    #contact .frame h2,
+    #mystory .frame h2 {
+      line-height:.88;
+    }
+
+    @media (max-width:760px) {
+      #home { min-height:700px; overflow:auto; }
+      .wall { position:fixed; }
+      .topnav { top:18px; gap:9px; }
+      .pill { padding:8px 16px; }
+      .icons {
+        position:relative;
+        inset:auto;
+        display:grid;
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:24px 4px;
+        padding:102px 10px 58px;
+      }
+      .desktop-icon { position:static !important; width:100%; min-width:0; }
+      .pixicon, .photo-icon, .folder-icon { width:62px; height:62px; }
+      .desktop-icon span:last-child { font-size:14px; }
+      .home-title {
+        top:30px;
+        padding:0 16px;
+        font-size:88px;
+        line-height:.9;
+        white-space:normal;
+      }
+      .hint { position:fixed; }
+      .backbar { margin-bottom:18px; }
+      .pagehead {
+        flex-direction:column;
+        align-items:center;
+        min-height:240px;
+        margin-bottom:26px;
+      }
+      .pagehead h1 { font-size:clamp(58px,18vw,96px); }
+      .polaroid {
+        position:relative;
+        right:auto;
+        top:auto;
+        width:118px;
+        margin-top:18px;
+      }
+      .venture, .venture:nth-child(even) { grid-template-columns:1fr; }
+      .venture:nth-child(even) .vtext { order:0; }
+      .vtext h2 { font-size:clamp(36px,11vw,58px); }
+      .role { font-size:clamp(24px,8vw,38px); }
+      .win, .venture:nth-child(even) .win {
+        transform:none;
+        max-width:340px;
+        width:100%;
+        margin:0 auto;
+      }
+      .winbody { height:230px; }
+      .sky { padding:24px 18px 54px; }
+      .frame { min-height:auto; }
+      .content {
+        min-height:auto;
+        padding:42px 8px 54px;
+      }
+      .frame h2 {
+        margin-top:28px;
+        font-size:clamp(48px,16vw,82px);
+      }
+      .lede { font-size:clamp(22px,8vw,34px); }
+      .tiles { grid-template-columns:1fr 1fr; }
+      .culture-gallery { grid-template-columns:1fr 1fr; }
+      #founder .pagehead {
+        text-align:center;
+        justify-content:center;
+      }
+      .founder-visuals {
+        grid-template-columns:1fr;
+        gap:24px;
+      }
+      .founder-intro {
+        text-align:center;
+        margin:0 auto;
+        font-size:18px;
+      }
+      .detail-grid { grid-template-columns:1fr; }
+      .detail-card.wide { grid-column:auto; }
+      .overview-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width:430px) {
+      .topnav { justify-content:flex-start; }
+      .pagehead { gap:12px; }
+      .polaroid { width:104px; }
+      .tiles { grid-template-columns:1fr; }
+      .culture-gallery { grid-template-columns:1fr; }
+    }
+    @media (max-width:760px) {
+      .sky { padding:34px 16px 72px; }
+      .backbar { margin-bottom:26px; }
+      .content { padding:36px 20px 44px; }
+      #founder .pagehead {
+        display:block;
+        padding-right:0;
+        text-align:center;
+      }
+      #founder .pagehead h1 {
+        max-width:none;
+        font-size:clamp(56px,18vw,96px);
+      }
+      .polaroid {
+        position:relative;
+        width:104px;
+        margin:20px 0 0;
+      }
+      #founder .polaroid {
+        position:relative;
+        right:auto;
+        top:auto;
+        margin:20px auto 0;
+      }
+      #founder .founder-visuals {
+        grid-template-columns:1fr;
+        gap:28px;
+        margin-bottom:54px;
+      }
+      #founder .founder-intro {
+        max-width:100%;
+        margin:0;
+        padding:24px 22px;
+        text-align:left;
+        font-size:18px;
+      }
+      .founder-collage {
+        display:grid;
+        grid-template-columns:1fr;
+      }
+      #founder .founder-collage {
+        padding-top:0;
+      }
+      .founder-collage img:first-child,
+      .founder-collage img:last-child {
+        width:min(420px,100%);
+        margin:auto;
+      }
+      .culture-gallery { grid-template-columns:1fr; }
+    }
+    @media (max-width:760px) {
+      .frame h2 {
+        margin-top:0;
+        font-size:clamp(34px,11vw,54px);
+      }
+      .lede {
+        font-size:18px;
+        line-height:1.28;
+      }
+      .frame p,
+      .frame li,
+      .detail-card p {
+        font-size:15px;
+        line-height:1.52;
+      }
+      #founder .pagehead h1 {
+        font-size:clamp(42px,14vw,68px);
+        line-height:.94;
+      }
+      #founder .founder-intro {
+        padding:18px 20px;
+        font-size:15px;
+        line-height:1.48;
+      }
+      #founder .founder-collage {
+        grid-template-columns:1fr;
+        gap:14px;
+      }
+      #founder .founder-collage img:first-child,
+      #founder .founder-collage img:last-child {
+        width:min(320px,100%);
+        margin:0 auto;
+      }
+      #founder .more-detail-title {
+        font-size:clamp(30px,12vw,44px);
+      }
+      #founder .detail-grid {
+        grid-template-columns:1fr;
+      }
+      #founder .detail-card {
+        padding:20px;
+      }
+      #founder .detail-card h2 {
+        font-size:26px;
+      }
+      #founder .detail-card .role {
+        font-size:15px;
+      }
+      .founder-scroll {
+        gap:0;
+      }
+      .founder-kicker {
+        font-size:15px;
+        line-height:1.5;
+        margin:0 0 24px;
+      }
+      .founder-overview {
+        margin-bottom:34px;
+        padding-bottom:30px;
+      }
+      .founder-overview-lede {
+        font-size:15px;
+        line-height:1.5;
+      }
+      .founder-metric {
+        grid-template-columns:1fr;
+        gap:8px;
+        min-height:auto;
+      }
+      .founder-metric:last-child {
+        border-bottom:0;
+      }
+      .founder-plan-grid {
+        grid-template-columns:1fr;
+        gap:14px;
+      }
+      .experience-panel,
+      .experience-panel:nth-of-type(even) {
+        min-height:auto;
+        grid-template-columns:1fr;
+        gap:24px;
+        padding:42px 0;
+        border-top:2px solid #202024;
+      }
+      .experience-panel:nth-of-type(even) .experience-media {
+        order:0;
+      }
+      .experience-media {
+        min-height:auto;
+        padding:28px 18px;
+      }
+      .experience-media img {
+        max-width:min(320px,100%);
+        max-height:320px;
+      }
+      .experience-copy .eyebrow {
+        margin-bottom:18px;
+        padding:6px 14px;
+        font-size:11px;
+      }
+      .experience-copy h2 {
+        font-size:clamp(32px,11vw,46px);
+      }
+      .experience-copy .role {
+        font-size:16px;
+      }
+      .experience-copy p {
+        font-size:15px;
+        line-height:1.52;
+      }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      *, *:before, *:after {
+        scroll-behavior:auto !important;
+        animation-duration:.001ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.001ms !important;
+      }
+      .tear { opacity:0 !important; }
+    }
   </style>
 </head>
 <body>
-  <div id="home" class="screen active">
-    <div class="wall">
-      <img class="face" src="/assets/images/backgrounds/home-background-clean.png" alt="">
+  <section id="home" class="screen active">
+    <div class="wall" aria-hidden="true">
+      <img class="face" src="assets/home-background-clean.png" alt="">
+      <div class="rainbow"></div>
+      <div class="rainbow second"></div>
+      <div class="scanlines"></div>
+      <div class="tear"></div>
+      <div class="tear second"></div>
     </div>
-    <div class="rainbow"></div>
-    <div class="rainbow second"></div>
-    <div class="scanlines"></div>
-    <div class="tear"></div>
-    <div class="tear second"></div>
+
+    <nav class="topnav" aria-label="Primary">
+      <button class="pill home" type="button" onclick="go('home')">home</button>
+      <button class="pill" type="button" onclick="go('founder')">my history</button>
+      <button class="pill" type="button" onclick="go('contact')">contact</button>
+    </nav>
+
+    <div class="icons" aria-label="Desktop">
+      <button class="desktop-icon" id="ic-founder" type="button" onclick="go('founder')">
+        <img class="pixicon" src="assets/ie.png" alt="">
+        <span><u>My<br>History</u></span>
+      </button>
+      <button class="desktop-icon" id="ic-story" type="button" onclick="go('mystory')">
+        <img class="desktop-art-icon" src="assets/icon-world.png" alt="">
+        <span>My Story</span>
+      </button>
+      <button class="desktop-icon" id="ic-studies" type="button" onclick="go('studies')">
+        <img class="desktop-art-icon" src="assets/icon-folder-file.png" alt="">
+        <span>Studies</span>
+      </button>
+      <button class="desktop-icon" id="ic-culture3" type="button" onclick="go('culture')">
+        <img class="desktop-art-icon" src="assets/icon-person.png" alt="">
+        <span>Culture</span>
+      </button>
+      <button class="desktop-icon" id="ic-contact" type="button" onclick="go('contact')">
+        <img class="desktop-art-icon" src="assets/icon-compass.png" alt="">
+        <span>Contact</span>
+      </button>
+    </div>
     <h1 class="home-title">PORTFOLIO</h1>
-    <div class="icons">
-      <button type="button" class="desktop-icon" id="ic-founder" onclick="screenTo('founder')">
-        <img class="desktop-art-icon" src="/assets/images/founders/founder-early-cutout.png" alt="">
-        <span class="desktop-label">My History</span>
-      </button>
-      <button type="button" class="desktop-icon" id="ic-finder" onclick="screenTo('studies')">
-        <div class="folder-icon"></div>
-        <span class="desktop-label">Studies</span>
-      </button>
-      <button type="button" class="desktop-icon" id="ic-story" onclick="screenTo('contact')">
-        <div class="mail-icon"></div>
-        <span class="desktop-label">Contact</span>
-      </button>
-      <button type="button" class="desktop-icon" id="ic-studies" onclick="screenTo('founder')">
-        <img class="pixicon" src="/assets/images/icons/studies-icon.png" alt="">
-        <span class="desktop-label">Studies</span>
-      </button>
-      <button type="button" class="desktop-icon" id="ic-culture3" onclick="screenTo('culture')">
-        <div class="photo-icon green"></div>
-        <span class="desktop-label">Culture</span>
-      </button>
-      <button type="button" class="desktop-icon" id="ic-contact" onclick="screenTo('contact')">
-        <img class="pixicon" src="/assets/images/icons/icon-world.png" alt="">
-        <span class="desktop-label">Contact</span>
-      </button>
-    </div>
-    <div class="hint">double era energy - tap an icon to open a page ✦</div>
-  </div>
+    <p class="hint">double era energy  -  tap an icon to open a page ✦</p>
+  </section>
 
-  <div id="founder" class="screen">
+  <section id="founder" class="screen">
     <div class="sky">
-      <div class="backbar">
-        <button type="button" class="back" onclick="screenTo('home')">← BACK</button>
-      </div>
-      <div class="pagehead">
-        <h1>founder</h1>
-        <div class="polaroid">
-          <img src="/assets/images/founders/portrait.png" alt="Portrait">
+      <div class="backbar"><button class="back" type="button" onclick="go('home')">← back to desktop</button></div>
+      <header class="pagehead">
+        <h1>MY HISTORY</h1>
+        <div class="polaroid"><img src="assets/portrait.png" alt="Sammi Teki"></div>
+      </header>
+      <section class="founder-overview" aria-label="My history overview">
+        <p class="founder-overview-lede">A fast version of what I have built so far.</p>
+        <div class="founder-overview-grid" aria-label="Key achievements">
+          <div class="founder-metric"><b>@ 16</b><span><strong>Clothing resale business:</strong> approximately £7,000 in profit.</span></div>
+          <div class="founder-metric"><b>@ 17-18</b><span><strong>Web3 project:</strong> £40,000 raised, 5,000 followers, 1,800+ community members, and a sold-out launch within two months. Overspent, lacked financial discipline, and learned how biased feedback can hide weak product signals. The bet was simple: if it failed, I would go to uni as promised, which I did.</span></div>
+          <div class="founder-metric"><b>@ 20/21</b><span><strong>Growth @ L3NS.ai:</strong> built AI operations and business-development agents that reduced manual triage by 50%; grew a 250-person founder and investor community.</span></div>
+          <div class="founder-metric"><b>@ 21</b><span><strong>Founded Badr Studios:</strong> delivered 12+ software and AI projects, generating five figures of revenue within the first few months. Worked with funded proptech companies, accelerator-backed startups and a GQ-cover brand with clients including KSI and Letitia Wright.</span></div>
+          <div class="founder-metric"><b>@ 22</b><span><strong>Built ALFRD's initial financial data readiness products</strong> for downstream finance as founder, product architect, commercial driver and primary decision maker. Shipped two product lines with CFOs and engineers, including a 10-step forensic checker crafted with a CFO design partner. Ran live CFO beta sessions, turned feedback into product requirements, secured SEIS advance assurance, generated 15 CFO sign-ups in 72 hours, signed the first contracted deployment, and gained Daily Mail exposure after a public pitch-board guerrilla marketing stunt.</span></div>
         </div>
-      </div>
-      <div class="founder-visuals">
-        <div class="founder-intro">
-          <p>Founded and scaled multi-million dollar ventures spanning financial infrastructure, autonomous trading systems, and sales acceleration. Leveraged cryptography, mathematics, and machine learning to build defensible competitive advantages. Developed comprehensive GTM, partnerships, and operator methodologies.</p>
-        </div>
-        <div class="founder-collage">
-          <img src="/assets/images/founders/founder-early.png" alt="Early">
-          <img src="/assets/images/founders/founder-later.png" alt="Later">
-        </div>
-      </div>
-      <div class="frame">
-        <div class="titlebar">
-          <div class="dots"><i></i><i></i><i></i></div>
-          <span>founder.history</span>
-        </div>
-        <div class="content">
-          <h2>my arc</h2>
-          <p class="lede">From building trading systems to scaling autonomous operations, I've learned operational excellence, risk management, and capital efficiency.</p>
-          <div class="detail-grid">
-            <div class="detail-card">
-              <h2>Double Era</h2>
-              <p class="role">CEO & Chief Scientist</p>
-              <p>Built an autonomous trading protocol with 9-figure notional volumes, combining quantitative analysis with advanced technology infrastructure.</p>
-              <div class="chiprow">
-                <span class="chip">Quantitative Finance</span>
-                <span class="chip">Trading</span>
-                <span class="chip">Infrastructure</span>
-              </div>
-            </div>
-            <div class="detail-card">
-              <h2>Venture Building</h2>
-              <p class="role">Founder</p>
-              <p>Built several companies across fintech, AI automation, and sales technology, achieving product-market fit and multi-million dollar revenue.</p>
-              <div class="chiprow">
-                <span class="chip">FinTech</span>
-                <span class="chip">Sales Tech</span>
-                <span class="chip">AI Automation</span>
-              </div>
-            </div>
-            <div class="detail-card">
-              <h2>Operations</h2>
-              <p class="role">Fractional operator</p>
-              <p>Partnered with 20+ founders on go-to-market, partnerships, organizational design, and capital efficiency—helping scale from seed to Series B+.</p>
-              <div class="chiprow">
-                <span class="chip">GTM</span>
-                <span class="chip">Partnerships</span>
-                <span class="chip">Scaling</span>
-              </div>
-            </div>
-          </div>
-          <h2 class="more-detail-title">achievements</h2>
-          <p class="top-achievements">Some key highlights</p>
-          <ul class="achievements">
-            <li><strong>9-figure notional volumes</strong> traded through autonomous protocols with sub-millisecond execution</li>
-            <li><strong>$50M+ in revenue</strong> generated across ventures and partnerships</li>
-            <li><strong>20+ companies advised</strong> through all stages of company building</li>
-            <li><strong>Cryptography & ML expert</strong> with deep infrastructure knowledge</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="studies" class="screen">
-    <div class="sky">
-      <div class="backbar">
-        <button type="button" class="back" onclick="screenTo('home')">← BACK</button>
-      </div>
-      <div class="pagehead">
-        <h1>studies</h1>
-      </div>
-      <div class="frame">
-        <div class="titlebar">
-          <div class="dots"><i></i><i></i><i></i></div>
-          <span>research.papers</span>
-        </div>
-        <div class="content">
-          <h2>what i've researched</h2>
-          <p class="lede">A selection of research interests spanning infrastructure, markets, and AI.</p>
-          <div class="overview-grid">
-            <div class="overview-card">
-              <b>Quantitative Finance</b>
-              <span>Advanced trading systems, portfolio optimization, and market microstructure.</span>
-            </div>
-            <div class="overview-card">
-              <b>Cryptography</b>
-              <span>Modern cryptographic protocols, zero-knowledge proofs, and secure computation.</span>
-            </div>
-            <div class="overview-card">
-              <b>Machine Learning</b>
-              <span>Deep learning architectures, reinforcement learning, and autonomous agents.</span>
-            </div>
-            <div class="overview-card">
-              <b>Distributed Systems</b>
-              <span>Consensus mechanisms, Byzantine fault tolerance, and decentralized protocols.</span>
-            </div>
-            <div class="overview-card">
-              <b>Economics</b>
-              <span>Behavioral economics, mechanism design, and market dynamics.</span>
-            </div>
-            <div class="overview-card">
-              <b>Operations</b>
-              <span>Organizational design, process optimization, and scaling frameworks.</span>
-            </div>
-          </div>
-          <p class="note">These areas inform my thinking on infrastructure, partnerships, and organizational building.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="culture" class="screen">
-    <div class="sky">
-      <div class="backbar">
-        <button type="button" class="back" onclick="screenTo('home')">← BACK</button>
-      </div>
-      <div class="pagehead">
-        <h1>culture</h1>
-      </div>
-      <div class="frame">
-        <div class="titlebar">
-          <div class="dots"><i></i><i></i><i></i></div>
-          <span>photos.gallery</span>
-        </div>
-        <div class="content">
-          <h2>moments & people</h2>
-          <p class="lede">A collection of moments from ventures, teams, and experiences.</p>
-          <div class="culture-gallery">
-            <div class="culture-item">
-              <img src="/assets/images/culture/culture-01.jpg" alt="">
-              <div class="culture-caption">
-                <strong>Founding</strong>
-                <span>Early days at the office</span>
-              </div>
-            </div>
-            <div class="culture-item">
-              <img src="/assets/images/culture/culture-02.jpg" alt="">
-              <div class="culture-caption">
-                <strong>Team</strong>
-                <span>Building with the crew</span>
-              </div>
-            </div>
-            <div class="culture-item">
-              <img src="/assets/images/culture/culture-03.jpg" alt="">
-              <div class="culture-caption">
-                <strong>Growth</strong>
-                <span>Scaling operations</span>
-              </div>
-            </div>
-            <div class="culture-item">
-              <img src="/assets/images/culture/culture-04.jpg" alt="">
-              <div class="culture-caption">
-                <strong>Strategy</strong>
-                <span>Planning sessions</span>
-              </div>
-            </div>
-            <div class="culture-item">
-              <img src="/assets/images/culture/culture-05.jpg" alt="">
-              <div class="culture-caption">
-                <strong>Execution</strong>
-                <span>Getting things done</span>
-              </div>
-            </div>
-            <div class="culture-item">
-              <img src="/assets/images/culture/culture-06.jpg" alt="">
-              <div class="culture-caption">
-                <strong>Culture</strong>
-                <span>Team moments</span>
-              </div>
-            </div>
-            <div class="culture-item">
-              <img src="/assets/images/culture/culture-07.jpg" alt="">
-              <div class="culture-caption">
-                <strong>Innovation</strong>
-                <span>Building the future</span>
-              </div>
-            </div>
-            <div class="culture-item">
-              <img src="/assets/images/culture/culture-08.jpg" alt="">
-              <div class="culture-caption">
-                <strong>Collaboration</strong>
-                <span>Working together</span>
-              </div>
-            </div>
-            <div class="culture-item">
-              <img src="/assets/images/culture/culture-09.jpg" alt="">
-              <div class="culture-caption">
-                <strong>Success</strong>
-                <span>Celebrating wins</span>
-              </div>
-            </div>
+        <div class="founder-future">
+          <h2>Where I want to go</h2>
+          <p><strong>Vertical operating systems are the interest.</strong> Frontier models keep getting better, which means most thin products built on top of them will get killed. The bigger opportunity is rebuilding industry software from the ground up for self-evolving, agentic systems. Many incumbent tools sit on rigid infrastructure and legacy workflows that are expensive and slow to transform, creating room for a new wave of disruptors. What survives will not win on raw intelligence; that gets commoditised. It will win by becoming the operating layer for one industry: deeply integrated, sticky, and designed so well that nothing general competes with it. Saturn is the shape: embedded in how financial advice firms actually operate, painful to remove. Granola is the craft standard.</p>
+          <p>The route I am interested in is owning one segment or industry deeply, the way Saturn is becoming embedded for financial advisers. Enter through a narrow, painful problem, then expand across the operating chain until the category runs on our layer. The moat is not the model. It is integration depth, product design, industry understanding and becoming the default system of record for innovation in that category.</p>
+          <p>I do not know the exact vertical yet. The route is likely a mix of transformation deployments inside real companies, a co-founder with deep industry insight, and direct research into where workflows are most broken. What I am not doing is picking one from a desk.</p>
+          <div class="founder-plan-grid" aria-label="Future plan">
+            <div class="founder-plan"><b>What is changing</b>The model itself gets cheaper. The value moves to distribution, industry depth and being properly embedded.</div>
+            <div class="founder-plan"><b>How I might enter</b>Test scoped problems in real deployments, learn where the pain is sharpest, and let the strongest segment reveal itself through use.</div>
+            <div class="founder-plan"><b>Why I can do this</b>I can sit inside messy operating problems, understand the judgement calls, and turn them into something engineers can actually build.</div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="contact" class="screen">
-    <div class="sky">
-      <div class="backbar">
-        <button type="button" class="back" onclick="screenTo('home')">← BACK</button>
-      </div>
-      <div class="pagehead">
-        <h1>contact</h1>
-      </div>
-      <div class="frame">
-        <div class="titlebar">
-          <div class="dots"><i></i><i></i><i></i></div>
-          <span>contact.info</span>
-        </div>
-        <div class="content">
-          <h2>let's connect</h2>
-          <p class="lede">Interested in working together? Let's talk.</p>
-          <p>I'm always open to discussions about ventures, partnerships, advisory work, or just building interesting things.</p>
-          <div class="chiprow">
-            <a class="chip" href="https://twitter.com/SammiTeki" target="_blank">Twitter</a>
-            <a class="chip" href="https://linkedin.com/in/sammi-teki" target="_blank">LinkedIn</a>
-            <a class="chip" href="mailto:sammi@double-era.com">Email</a>
+      </section>
+      <h2 class="timeline-heading">Detailed chapters</h2>
+      <div class="founder-scroll" aria-label="Founder experience scroll story">
+        <article class="experience-panel">
+          <div class="experience-media"><img src="assets/panel-mso-clean.png" alt="MSO Developments founder panel"></div>
+          <div class="experience-copy">
+            <div class="eyebrow">2022 · Founder</div>
+            <h2>MSO Developments</h2>
+            <div class="role">Property deal-sourcing agency</div>
+            <p>I started deal-sourcing because I wanted to make money, not because I had a real obsession with the craft. The people who win there care deeply about structuring great deals and spotting details others miss. I did not have that passion, and I could not see myself spending a serious part of my life in that world.</p>
+            <div class="experience-progress">01 / 05</div>
           </div>
-          <p class="note">Best way to reach me is through email or Twitter direct message.</p>
+        </article>
+        <article class="experience-panel">
+          <div class="experience-media"><img src="assets/panel-ttm-clean.png" alt="TTM Capital founder panel"></div>
+          <div class="experience-copy">
+            <div class="eyebrow">2022 · Founder</div>
+            <h2>TTM Capital</h2>
+            <div class="role">Web3 / NFT venture  -  founded at 18</div>
+            <p>I was genuinely excited by the space. Raised £40K with zero institutional backing, built a 1,800+ person community and 5k Twitter following in three months, and sold out the debut drop on story and conviction alone.</p>
+            <div class="experience-progress">02 / 05</div>
+          </div>
+        </article>
+        <article class="experience-panel">
+          <div class="experience-media"><img src="assets/panel-l3ns-clean.png" alt="L3NS.ai founder panel"></div>
+          <div class="experience-copy">
+            <div class="eyebrow">2025 · Growth &amp; Sales Ops</div>
+            <h2>L3NS.ai</h2>
+            <div class="role">AI MarTech platform</div>
+            <p>Built 6+ production automations saving 10-12 hrs/week, including lead logging and lead research workflows; cut manual lead triage by 40% and reduced sales response lag from ~24 hrs to under 2. Grew the founder and investor community to 250.</p>
+            <div class="experience-progress">03 / 05</div>
+          </div>
+        </article>
+        <article class="experience-panel">
+          <div class="experience-media"><img src="assets/panel-badr-clean.png" alt="Badr Studios founder panel"></div>
+          <div class="experience-copy">
+            <div class="eyebrow">2025 / 26 · Founder</div>
+            <h2>Badr Studios</h2>
+            <div class="role">Digital studio</div>
+            <p>Five-figure revenue within months from founder-led sales and delivery, with zero external funding. Shipped 12+ projects, including a full build for a GQ-cover brand with clients including KSI and Letitia Wright. For the GQ-cover brand, we redesigned the booking flow, customer success process and website. I also worked with a funded proptech firm where I saw longer sales cycles up close. I moved on because the work felt capped and not deeply fulfilling: I was not waking up excited to solve problems that felt big, innovative or genuinely transformational.</p>
+            <div class="experience-progress">04 / 05</div>
+          </div>
+        </article>
+        <article class="experience-panel">
+          <div class="experience-media"><img src="assets/panel-alfrd-clean.png" alt="ALFRD founder panel"></div>
+          <div class="experience-copy">
+            <div class="eyebrow">2026 - present · Founder &amp; CEO</div>
+            <h2>ALFRD</h2>
+            <div class="role">B2B fintech  -  data trust layer for finance</div>
+            <p>15 CFOs waitlisted in 72 hours pre-product, zero ad spend. I was just entering finance, but through relentless focus, reading reports, interviews, pilots and live product sessions, I learned their pains at a granular level. Recruited CFOs to test the product for free by selling a vision they believed in, built financial models that went through SEIS advance assurance, landed the first pilot, and used guerrilla marketing that led to a Daily Mail interview about the startup.</p>
+            <div class="experience-progress">05 / 05</div>
+          </div>
+        </article>
+      </div>
+      <div class="founder-visuals" hidden>
+        <p class="founder-intro">A founder path built from <strong>cold calls</strong>, community, automations, client delivery, and now ALFRD. The cards here are the visual map; the section below goes into the detail.</p>
+        <div class="founder-collage" aria-label="Founder history visual cards">
+          <img src="assets/founder-early-cutout.png" alt="TTM Capital and MSO Developments founder cards">
+          <img src="assets/founder-later-cutout.png" alt="L3NS, Badr Studios, and ALFRD founder cards">
+        </div>
+      </div>
+      <div class="more-detail" hidden>
+        <h2 class="more-detail-title">more <span>detail</span></h2>
+        <div class="detail-grid">
+          <article class="detail-card">
+            <div class="eyebrow">2022 · Founder</div>
+            <h2>MSO Developments</h2>
+            <div class="role">Property deal-sourcing agency</div>
+            <p>I started deal-sourcing because I wanted to make money, not because I had a real obsession with the craft. The people who win there care deeply about structuring great deals and spotting details others miss. I did not have that passion, and I could not see myself spending a serious part of my life in that world.</p>
+          </article>
+          <article class="detail-card">
+            <div class="eyebrow">2022 · Founder</div>
+            <h2>TTM Capital</h2>
+            <div class="role">Web3 / NFT venture  -  founded at 18</div>
+            <p>I was genuinely excited by the space. Raised £40K with zero institutional backing, built a 1,800+ person community and 5k Twitter following in three months, and sold out the debut drop on story and conviction alone.</p>
+          </article>
+          <article class="detail-card">
+            <div class="eyebrow">2025 · Growth &amp; Sales Ops</div>
+            <h2>L3NS.ai</h2>
+            <div class="role">AI MarTech platform</div>
+            <p>Built 6+ production automations saving 10-12 hrs/week, including lead logging and lead research workflows; cut manual lead triage by 40% and reduced sales response lag from ~24 hrs to under 2. Grew the founder and investor community to 250.</p>
+          </article>
+          <article class="detail-card">
+            <div class="eyebrow">2025 / 26 · Founder</div>
+            <h2>Badr Studios</h2>
+            <div class="role">Digital studio</div>
+            <p>Five-figure revenue within months from founder-led sales and delivery, with zero external funding. Shipped 12+ projects, including a full build for a GQ-cover brand with clients including KSI and Letitia Wright. For the GQ-cover brand, we redesigned the booking flow, customer success process and website. I also worked with a funded proptech firm where I saw longer sales cycles up close. I moved on because the work felt capped and not deeply fulfilling: I was not waking up excited to solve problems that felt big, innovative or genuinely transformational.</p>
+          </article>
+          <article class="detail-card wide">
+            <div class="eyebrow">2026 - present · Founder &amp; CEO</div>
+            <h2>ALFRD</h2>
+            <div class="role">B2B fintech  -  data trust layer for finance</div>
+            <p>15 CFOs waitlisted in 72 hours pre-product, zero ad spend. I was just entering finance, but through relentless focus, reading reports, interviews, pilots and live product sessions, I learned their pains at a granular level. Recruited CFOs to test the product for free by selling a vision they believed in, built financial models that went through SEIS advance assurance, landed the first pilot, and used guerrilla marketing that led to a Daily Mail interview about the startup.</p>
+          </article>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <section id="studies" class="screen">
+    <div class="sky"><div class="backbar"><button class="back" type="button" onclick="go('home')">← back to desktop</button></div><div class="frame"><div class="titlebar"><span class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></span> Studies</div><div class="content"><h2>Studies</h2><div class="lede">BSc Business Management &amp; Marketing  -  Queen Mary University of London (2021-2024)</div><p>JP Morgan mentoring programme participant. Coursework included strategic management, marketing analytics, business law and supply chain management.</p><div class="chiprow"><span class="chip">Strategic management</span><span class="chip">Marketing analytics</span><span class="chip">Business law</span><span class="chip">Supply chain management</span><span class="chip">JP Morgan mentoring</span></div></div></div></div>
+  </section>
+
+  <section id="mystory" class="screen">
+    <div class="sky"><div class="backbar"><button class="back" type="button" onclick="go('home')">← back to desktop</button></div><div class="frame"><div class="titlebar"><span class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></span> My Story</div><div class="content"><h2>My Story</h2><div class="lede">Founder &amp; commercial operator  -  shaped by risk, excellence and a need to build.</div><p>I grew up around two ideas that quietly shaped everything: risk was not something to avoid, and excellence was not optional. From my mum, I saw day-to-day courage and long-range thinking. She talked about Ethiopia's transformation years before it became obvious, then caught part of that tailwind herself. From my dad, I inherited a standard for excellence: a brilliant mathematician who earned a scholarship to study in the UK and built his path through civil engineering.</p><p>That combination made me believe I could do more than the normal path suggested. It also made it hard to apply myself to things that felt small, capped or disconnected from real impact. I wanted to solve difficult problems, build something that mattered, and create enough wealth to fund the people, dreams and ideas I care about.</p><p>I started building businesses at 17. Before turning 21, I had already started four. The first was a property deal-sourcing agency. I cold-called estate agents, spoke to investors and went to viewings as a teenager trying to create opportunity from nothing, but the motivation was wrong. I wanted money more than I wanted to master the problem. The people who win there have a real passion for crafting great deals and an unreasonable attention to detail. I did not have that, and I could not see myself spending a serious chunk of my life in that world.</p><p>TTM Capital came next: a Web3 project I built with a friend. I led growth, strategy and community, helped grow it to 1,800 members, raised £40,000, and sold out the launch. We later closed after spending too aggressively and overestimating demand. Much of the feedback had come from biased people, and we were gathering it in a way that reinforced what we already wanted to believe, which led us to overestimate the financial potential of the launch. That experience taught me to test demand more honestly and analyse feedback before building a forecast around it.</p><p>While studying, I worked in restaurants, hosting, sales and startups. A MarTech startup was where I really learned about AI, building production-ready agents that cut operational lag by 45%. Then came Badr Studios, where I delivered more than a dozen web, AI and digital transformation projects across fashion, technology, health, wellness and property.</p><p>Agency work taught me how to sell, scope and deliver quickly, but it also showed me how dependent AI is on good data. Around the same time, I read research on the demand for reliable financial data, which pulled me deeper into the space. I still felt the ceiling in client work though. It was useful commercially, but not the deeper mission I wanted to spend years building around.</p><p>ALFRD began differently. I initially wanted to build an operating system for fractional CFOs, but interview after interview exposed the same underlying problem: before finance teams could advise, forecast or use AI, their financial and operational data had to agree. That bottleneck became ALFRD.</p><p>I still approach building the same way. Recently, I walked around London carrying a board and pitching ALFRD to the public. I pitched to around eight investors I met that day and was interviewed on the spot by the Daily Mail about what I am building. It may look unconventional, but I am prepared to do what most founders will not.</p><p>I feel lucky to have been born into one of the most transformational periods in technology. I think solving problems gives people purpose, and it is one of life's beauties. I do not really see a version of life where I am not chasing problems, watching how technology changes society, and trying to use ground-up, first-principles thinking to transform industries at scale. I carry the forward-looking trait I saw in my mum, but now the tailwind is technology.</p><div class="top-achievements">What actually drives me</div><ul class="achievements"><li><strong>I love risk</strong> because I grew up watching it create opportunity.</li><li><strong>Excellence is the standard</strong> because my dad showed me what deep technical ability and discipline can unlock.</li><li><strong>I need mission</strong> because capped work makes me restless, even when it is commercially useful.</li><li><strong>I want leverage</strong> so the companies I build can create impact, wealth and freedom far beyond myself.</li></ul></div></div></div>
+  </section>
+
+  <section id="culture" class="screen">
+    <div class="sky"><div class="backbar"><button class="back" type="button" onclick="go('home')">← back to desktop</button></div><div class="frame"><div class="titlebar"><span class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></span> Culture</div><div class="content"><h2>Culture.jpg</h2><div class="lede">The stuff outside the pitch deck.</div><p>A living mood board of moments, habits and signals that shape how I think, build and move. Tap or hover any image to reveal the annotation box.</p><div class="culture-gallery"><div class="culture-item" tabindex="0"><img src="assets/culture/culture-01.jpg" alt="Sammi interviewing someone in London"><div class="culture-caption"><strong>Public interviews</strong>Two-day hackathon on gambling addiction. We went out into the public and interviewed people properly.</div></div><div class="culture-item" tabindex="0"><img src="assets/culture/culture-02.jpg" alt="Combatkru podcast image"><div class="culture-caption"><strong>Combatkru</strong>As a Muay Thai enthusiast, I interviewed up-and-coming fighters as a side hobby.</div></div><div class="culture-item" tabindex="0"><img src="assets/culture/culture-03.jpg" alt="Sammi in a boxing ring"><div class="culture-caption"><strong>Fight camp</strong>A Muay Thai fight I did. Had to lose 12kg for it. Not fun, but definitely character-building.</div></div><div class="culture-item" tabindex="0"><img src="assets/culture/culture-04.jpg" alt="Sammi's girlfriend with flowers"></div><div class="culture-item" tabindex="0"><img src="assets/culture/culture-05.jpg" alt="Sammi in an Arsenal shirt"><div class="culture-caption"><strong>Arsenal fan</strong>Part of the personality file. Pain, hope, loyalty, repeat.</div></div><div class="culture-item" tabindex="0"><img src="assets/culture/culture-07.jpg" alt="Recent hackathon screen"><div class="culture-caption"><strong>Recent hackathon</strong>A build sprint: pressure, fast decisions and testing ideas in public.</div></div><div class="culture-item" tabindex="0"><img src="assets/culture/culture-08.jpg" alt="Hackathon finalist team photo"><div class="culture-caption"><strong>Finalist at my first hackathon</strong></div></div><div class="culture-item" tabindex="0"><img src="assets/culture/culture-09.jpg" alt="Sammi in Venice with his girlfriend"><div class="culture-caption"><strong>Venice with my gf</strong></div></div></div></div></div></div>
+  </section>
+
+  <section id="about" class="screen">
+    <div class="sky"><div class="backbar"><button class="back" type="button" onclick="go('home')">← back to desktop</button></div><div class="frame"><div class="titlebar"><span class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></span> Overview</div><div class="content"><h2>Sammi Teki</h2><div class="lede">Founder &amp; commercial operator · London, UK</div><p>Quick version: I build from zero. My work sits across fintech, AI automation, founder-led sales, GTM, partnerships and high-stakes client delivery. I am strongest at opening commercial relationships, turning messy early signals into systems, and representing companies at senior levels.</p><div class="overview-grid"><div class="overview-card"><b>Now</b><span>Building ALFRD: a trusted data layer for finance teams and the AI workflows that depend on clean, reliable numbers.</span></div><div class="overview-card"><b>Edge</b><span>Commercial operator who can sell, interview, ship, automate, and learn directly from the market.</span></div><div class="overview-card"><b>Proof</b><span>Started building at 17, raised £40K at 18, generated five-figure agency revenue, and waitlisted 15 CFOs pre-product.</span></div></div><div class="top-achievements">top achievements</div><ul class="achievements"><li><strong>15 CFO sign-ups</strong> in 72 hours, pre-product, at ALFRD</li><li><strong>Five-figure revenue</strong> within months at Badr Studios</li><li><strong>£40K raised at 18</strong> with no institutional backing</li><li><strong>20+ C-suite finance interviews</strong> informing product</li></ul><div class="chiprow"><button class="chip" type="button" onclick="go('mystory')">Read the story</button><button class="chip" type="button" onclick="go('founder')">See experience detail</button><a class="chip" href="https://linkedin.com/in/sammi-teki-852bb5267" target="_blank" rel="noopener">LinkedIn ↗</a></div></div></div></div>
+  </section>
+
+  <section id="contact" class="screen">
+    <div class="sky"><div class="backbar"><button class="back" type="button" onclick="go('home')">← back to desktop</button></div><div class="frame"><div class="titlebar"><span class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></span> Contact</div><div class="content"><h2>Let's talk</h2><p>The fastest way to reach me is LinkedIn  -  say what you're building and what you're after.</p><div class="chiprow"><a class="chip" href="https://linkedin.com/in/sammi-teki-852bb5267" target="_blank" rel="noopener">LinkedIn ↗</a><a class="chip" href="mailto:ceo@alfrdhq.com">ceo@alfrdhq.com ↗</a></div></div></div></div>
+  </section>
 
   <script>
-    function screenTo(screenId) {
-      document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
-      const screen = document.getElementById(screenId);
-      if (screen) screen.classList.add('active');
+    var currentScreen = "home";
+    function go(id) {
+      document.querySelectorAll(".screen").forEach(function(screen) {
+        screen.classList.remove("active");
+      });
+      var next = document.getElementById(id);
+      if (next) {
+        next.classList.add("active");
+        currentScreen = id;
+      }
       window.scrollTo(0, 0);
     }
   </script>
